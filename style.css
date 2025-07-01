@@ -1,0 +1,183 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 20px;
+  background: linear-gradient(120deg, #f0f4f8 0%, #e9eafc 100%);
+  color: #222;
+  min-height: 100vh;
+  /* margin-bottom: 200px; Removed to avoid excessive whitespace */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #3a3a7c;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.07);
+}
+
+form input, form select {
+  padding: 10px 12px;
+  border: 1px solid #bfc4d1;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.2s;
+}
+form input:focus, form select:focus {
+  border: 1.5px solid #6c63ff;
+}
+form button {
+  padding: 10px 18px;
+  background: linear-gradient(90deg, #6c63ff 60%, #48c6ef 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(76, 76, 150, 0.08);
+}
+form button:hover {
+  background: linear-gradient(90deg, #48c6ef 0%, #6c63ff 100%);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.07);
+  margin-bottom: 30px;
+}
+th, td {
+  border: none;
+  padding: 14px 12px;
+  text-align: left;
+  font-size: 15px;
+}
+th {
+  background: #f3f4fa;
+  color: #3a3a7c;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background: #f8f9fd;
+}
+tr:hover {
+  background: #e9eafc;
+}
+
+#chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e0e0f0;
+  padding: 18px 14px 14px 14px;
+  box-shadow: 0 4px 16px rgba(60,60,120,0.13);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#chatbot h3 {
+  margin: 0 0 8px 0;
+  color: #6c63ff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+#chat-window {
+  height: 160px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  font-size: 15px;
+  background: #f8f9fd;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #e0e0f0;
+}
+#user-input {
+  width: calc(100% - 70px);
+  padding: 8px 10px;
+  border: 1px solid #bfc4d1;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  margin-right: 6px;
+}
+#user-input:focus {
+  border: 1.5px solid #6c63ff;
+}
+#chatbot button {
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #6c63ff 60%, #48c6ef 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(76, 76, 150, 0.08);
+}
+#chatbot button:hover {
+  background: linear-gradient(90deg, #48c6ef 0%, #6c63ff 100%);
+}
+
+#motivational-quote {
+  background: linear-gradient(90deg, #48c6ef 0%, #6c63ff 100%);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(60,60,120,0.07);
+  letter-spacing: 0.5px;
+}
+
+.chatbot-spacer {
+  height: 240px; /* Increased to ensure no overlap with chatbot */
+  width: 100%;
+  display: block;
+}
+@media (max-width: 600px) {
+  form, #chatbot {
+    width: 95vw;
+    min-width: unset;
+    left: 2.5vw;
+    right: 2.5vw;
+    padding: 10px 5px;
+  }
+  #chatbot {
+    width: 95vw;
+    left: 2.5vw;
+    right: 2.5vw;
+    bottom: 10px;
+    padding: 10px 5px 8px 5px;
+  }
+  table, th, td {
+    font-size: 13px;
+  }
+  .chatbot-spacer {
+    height: 180px; /* Increased for mobile as well */
+  }
+}

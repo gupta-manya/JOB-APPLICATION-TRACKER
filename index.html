@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="logout-btn" style="position: absolute; top: 24px; right: 32px; background: #ff6b6b; color: #fff; border: none; border-radius: 6px; padding: 8px 16px; font-size: 15px; font-weight: 600; cursor: pointer;">Logout</button>
+  <div id="motivational-quote"></div>
+  <canvas id="statusChart" style="max-width: 400px; margin: 0 auto 30px auto; display: block;"></canvas>
+  <h1>Job Application Tracker</h1>
+  <div id="filter-bar" style="display: flex; gap: 10px; align-items: center; margin-bottom: 18px; justify-content: center;">
+    <select id="filter-status">
+      <option value="">All Statuses</option>
+      <option value="Applied">Applied</option>
+      <option value="Interviewing">Interviewing</option>
+      <option value="Offer">Offer</option>
+      <option value="Rejected">Rejected</option>
+    </select>
+    <input type="text" id="filter-search" placeholder="Search by role or company" style="padding: 7px 10px; border-radius: 6px; border: 1px solid #bfc4d1; font-size: 15px;">
+  </div>
+  <form id="job-form">
+    <input type="text" id="role" placeholder="Role" required>
+    <input type="text" id="company" placeholder="Company" required>
+    <select id="status">
+      <option value="Applied">Applied</option>
+      <option value="Interviewing">Interviewing</option>
+      <option value="Offer">Offer</option>
+      <option value="Rejected">Rejected</option>
+    </select>
+    <input type="text" id="notes" placeholder="Notes (optional)">
+    <button type="submit">Add Job</button>
+  </form>
+
+  <table id="job-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Company</th>
+        <th>Status</th>
+        <th>Notes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="chatbot-spacer"></div>
+  <div id="chatbot">
+    <h3>Ask Me Anything</h3>
+    <div id="chat-window"></div>
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
