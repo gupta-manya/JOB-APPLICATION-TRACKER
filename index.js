@@ -12,10 +12,14 @@ const fetch = require("node-fetch");
 
 
 const app = express();
+const cors = require("cors");
+
 app.use(cors({
-  origin: "*",  // or "https://your-netlify-site.netlify.app"
+  origin: "https://effervescent-valkyrie-36ffc5.netlify.app", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 
 
 app.use(express.json());
