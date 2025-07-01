@@ -1,3 +1,4 @@
+const cors = require("cors");
 require("dotenv").config();
 console.log("Loaded API Key:", process.env.OPENROUTER_API_KEY);
 console.log("Loaded MONGODB_URI:", process.env.MONGODB_URI);
@@ -11,7 +12,12 @@ const fetch = require("node-fetch");
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "*",  // or "https://your-netlify-site.netlify.app"
+  credentials: true
+}));
+
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI, {
