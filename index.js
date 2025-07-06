@@ -59,7 +59,7 @@ app.post("/chat", async (req, res) => {
         "X-Title": "job-application-tracker"     // Your project name
       },
       body: JSON.stringify({
-        model: "mistralai/mistral-7b-instruct",
+        model: "deepseek/deepseek-r1-0528:free",
         messages: [
           { role: "system", content: "You are a helpful assistant that guides users on job applications." },
           { role: "user", content: userInput }
